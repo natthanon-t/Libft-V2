@@ -48,7 +48,7 @@ all: $(NAME)
 
 clean:
 		@$(RM) $(OBJS)
-		@echo "$object files of libft has removed"
+		@echo "object files of libft has removed"
 
 
 fclean: clean
