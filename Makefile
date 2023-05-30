@@ -34,7 +34,7 @@ DIR_SRC = src
 
 AR = ar -rcs
 
-RM = rm -rf
+RM = rm -f
 
 OBJS = $(addprefix $(DIR_SRC)/, $(SRCS:.c=.o))
 
