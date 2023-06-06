@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ntairatt <ntairatt@student.42.fr>          +#+  +:+       +#+         #
+#    By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/29 12:21:09 by ntairatt          #+#    #+#              #
-#    Updated: 2023/06/02 18:28:50 by ntairatt         ###   ########.fr        #
+#    Updated: 2023/06/06 19:31:55 by ntairatt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,7 @@ BONUS_SRCS = ft_lst/ft_lstnew.c \
 				ft_lst/ft_lstdelone.c \
 				ft_lst/ft_lstclear.c \
 				ft_lst/ft_lstiter.c \
-				ft_lst/ft_lstmap.c 
+				ft_lst/ft_lstmap.c
 
 DIR_INC = include
 DIR_SRC = src
@@ -80,7 +80,7 @@ $(NAME): $(OBJS)
 		@$(AR) $(NAME) $(OBJS)
 		@echo "Libft is ready"
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re bonus norm
 all: $(NAME)
 
 clean:
@@ -97,3 +97,6 @@ bonus: $(OBJS) $(OBJB)
 		@echo "Libft is ready"
 
 re: fclean all
+
+norm:
+	@norminette include src
