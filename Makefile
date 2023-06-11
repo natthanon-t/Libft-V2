@@ -99,4 +99,6 @@ bonus: $(OBJS) $(OBJB)
 re: fclean all
 
 norm:
+	@echo "---------------- Libft -------------------"
 	@norminette include src
+	@echo "------------------------------------------\n"
