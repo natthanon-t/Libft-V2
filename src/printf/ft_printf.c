@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ntairatt <ntairatt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:52:20 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/03/30 13:03:15 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/09/11 14:23:18 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ void	conversion_check(va_list args, char conversion, int *len)
 		format_x(va_arg(args, unsigned int), len, conversion);
 	else if (conversion == '%')
 		format_c('%', len);
+	else
+	{
+		format_c('%', len);
+		format_c(conversion, len);
+	}
 }
 
 int	ft_printf(const char *str, ...)
