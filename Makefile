@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: ntairatt <ntairatt@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/29 12:21:09 by ntairatt          #+#    #+#              #
-#    Updated: 2023/06/06 19:31:55 by ntairatt         ###   ########.fr        #
+#    Updated: 2023/11/22 15:27:34 by ntairatt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,16 +56,6 @@ SRCS = ft_is/ft_isalpha.c \
 			ft_bzero.c ft_atoi.c ft_calloc.c \
 			ft_substr.c ft_split.c ft_itoa.c
 
-BONUS_SRCS = ft_lst/ft_lstnew.c \
-				ft_lst/ft_lstadd_front.c \
-				ft_lst/ft_lstsize.c \
-				ft_lst/ft_lstlast.c \
-				ft_lst/ft_lstadd_back.c \
-				ft_lst/ft_lstdelone.c \
-				ft_lst/ft_lstclear.c \
-				ft_lst/ft_lstiter.c \
-				ft_lst/ft_lstmap.c
-
 DIR_INC = include
 DIR_SRC = src
 
@@ -74,7 +64,6 @@ AR = ar -rcs
 RM = rm -f
 
 OBJS = $(addprefix $(DIR_SRC)/, $(SRCS:.c=.o))
-OBJB = $(addprefix $(DIR_SRC)/, $(BONUS_SRCS:.c=.o))
 
 $(NAME): $(OBJS)
 		@$(AR) $(NAME) $(OBJS)
@@ -84,17 +73,12 @@ $(NAME): $(OBJS)
 all: $(NAME)
 
 clean:
-		@$(RM) $(OBJS) $(OBJB)
+		@$(RM) $(OBJS)
 		@echo "Object files of libft has removed"
 
 fclean: clean
 		@$(RM) $(NAME)
 		@echo "Libft has removed"
-
-bonus: $(OBJS) $(OBJB)
-		@$(AR) $(NAME) $(OBJS) $(OBJB)
-		@echo "Bonus Function Added"
-		@echo "Libft is ready"
 
 re: fclean all
 
