@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ntairatt <ntairatt@student.42.fr>          +#+  +:+       +#+         #
+#    By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/29 12:21:09 by ntairatt          #+#    #+#              #
-#    Updated: 2023/11/22 15:27:34 by ntairatt         ###   ########.fr        #
+#    Updated: 2023/12/30 23:32:31 by ntairatt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,10 @@ NAME = libft.a
 CC = cc
 
 CFLAGS = -Wall -Wextra -Werror -I$(DIR_INC)
+
+HEADERS = include/libft.h \
+			include/ft_printf.h \
+			include/get_next_line.h
 
 SRCS = ft_is/ft_isalpha.c \
 			ft_is/ft_isdigit.c \
@@ -68,6 +72,8 @@ OBJS = $(addprefix $(DIR_SRC)/, $(SRCS:.c=.o))
 $(NAME): $(OBJS)
 		@$(AR) $(NAME) $(OBJS)
 		@echo "Libft is ready"
+
+$(OBJS): $(HEADERS)
 
 .PHONY: all clean fclean re bonus norm
 all: $(NAME)
