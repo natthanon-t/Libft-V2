@@ -14,6 +14,5 @@
 
 void	format_c(int c, int *len)
 {
-	write(1, &c, 1);
-	*len += 1;
+	*len += write(1, &c, 1);
 }

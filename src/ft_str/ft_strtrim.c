@@ -12,19 +12,7 @@
 
 #include "libft.h"
 
-static int	cmpset(char const s1, char const *set)
-{
-	int	i;
-
-	i = 0;
-	while (set[i])
-	{
-		if (s1 == set[i])
-			return (1);
-		i++;
-	}
-	return (0);
-}
+static int	cmpset(char const s1, char const *set);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -44,11 +32,21 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!str)
 		return (0);
 	while (start < end)
-	{
-		str[i] = s1[start];
-		start++;
-		i++;
-	}
+		str[i++] = s1[start++];
 	str[i] = '\0';
 	return (str);
+}
+
+static int	cmpset(char const s1, char const *set)
+{
+	size_t	i;
+
+	i = 0;
+	while (set[i])
+	{
+		if (s1 == set[i])
+			return (1);
+		i++;
+	}
+	return (0);
 }
